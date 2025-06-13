@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="control-section" class="content-section active-content">
+    <h2>التحكم في Open Canary</h2>
+    <button id="restartCanaryBtn">إعادة تشغيل Open Canary</button>
+    <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
+        ملاحظة: عند تغيير حالة أي خدمة أو تعديل قائمة IP المستثناة، يجب إعادة تشغيل Open Canary لتطبيق التغييرات.
+    </p>
+</section>
+{% endblock %}
+
+
+{% block page_scripts %}
+<script type="module" src="{{ url_for('static', filename='js/control.js') }}"></script>
+{% endblock %}

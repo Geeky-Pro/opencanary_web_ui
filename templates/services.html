@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="services-status-section" class="content-section active-content">
+    <h2>حالة الخدمات</h2>
+    <div id="services-status" class="card-grid">
+        <p>جارٍ تحميل حالة الخدمات...</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_scripts %}
+<script type="module" src="{{ url_for('static', filename='js/services.js') }}"></script>
+{% endblock %}

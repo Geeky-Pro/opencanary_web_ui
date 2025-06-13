@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم Open Canary الاحترافية</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div id="pending-changes-notification" class="pending-changes-hidden">
+            <p>⚠️ توجد تغييرات معلقة لم يتم تطبيقها على Open Canary.</p>
+            <div class="pending-actions">
+                <button id="applyChangesBtn">تطبيق التغييرات</button>
+                <button id="discardChangesBtn" class="discard-btn">إلغاء التغييرات</button>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Open Canary</h2>
+                <span>لوحة التحكم</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="{{ url_for('services_page') }}" id="nav-services" class="nav-link">📊 حالة الخدمات</a></li>
+                    <li><a href="{{ url_for('ignore_page') }}" id="nav-ignore" class="nav-link">🚫 قائمة العناوين المستثناة</a></li>
+                    <li><a href="{{ url_for('logs_page') }}" id="nav-logs" class="nav-link">📝 سجلات التنبيهات</a></li>
+                    <li><a href="{{ url_for('control_page') }}" id="nav-control" class="nav-link">⚙️ التحكم في Canary</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
+    {% block page_scripts %}{% endblock %}
+</body>
+</html>

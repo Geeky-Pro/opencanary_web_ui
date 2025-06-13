@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="ip-ignorelist-section" class="content-section active-content">
+    <h2>قائمة العناوين المستثناة (IP Ignorelist)</h2>
+    <div class="input-group">
+        <input type="text" id="ipInput" placeholder="أدخل عنوان IP جديد (مثال: 192.168.1.1)">
+        <button id="addIpBtn">إضافة IP</button>
+    </div>
+    <ul id="ipList">
+        <li>جارٍ تحميل قائمة IP المستثناة...</li>
+    </ul>
+    <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
+        ملاحظة: بعد إضافة/حذف عنوان IP، يجب إعادة تشغيل Open Canary لتطبيق التغييرات.
+    </p>
+</section>
+{% endblock %}
+
+
+{% block page_scripts %}
+<script type="module" src="{{ url_for('static', filename='js/ignore.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="logs-section" class="content-section active-content">
+    <h2>سجلات التنبيهات</h2>
+    <button id="refreshLogsBtn">تحديث السجلات</button>
+    <div class="logs-container">
+        <pre id="log-output"></pre>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_scripts %}
+<script type="module" src="{{ url_for('static', filename='js/logs.js') }}"></script>
+{% endblock %}
